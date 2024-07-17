@@ -28,15 +28,45 @@ class TrackResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('title')->required()->maxLength(255),
+                TextInput::make('title')
+                    ->label(__('Title'))
+                    ->required()
+                    ->maxLength(255),
             ]);
+    }
+
+    public static function getModelLabel(): string
+    {
+        return __('track');
+    }
+
+    public static function getNavigationLabel(): string
+    {
+        return __('Tracks');
+    }
+
+    public static function getPages(): array
+    {
+        return [
+            'index'  => ListTracks::route('/'),
+            'create' => CreateTrack::route('/create'),
+            'edit'   => EditTrack::route('/{record}/edit'),
+        ];
+    }
+
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
     }
 
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('title'),
+                TextColumn::make('title')
+                    ->label(__('Title')),
             ])
             ->filters([
                 //
@@ -52,21 +82,5 @@ class TrackResource extends Resource
             ->emptyStateActions([
                 Tables\Actions\CreateAction::make(),
             ]);
-    }
-
-    public static function getRelations(): array
-    {
-        return [
-            //
-        ];
-    }
-
-    public static function getPages(): array
-    {
-        return [
-            'index'  => ListTracks::route('/'),
-            'create' => CreateTrack::route('/create'),
-            'edit'   => EditTrack::route('/{record}/edit'),
-        ];
     }
 }

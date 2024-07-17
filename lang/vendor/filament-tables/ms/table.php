@@ -11,6 +11,12 @@ return [
     'columns' => [
 
         'text' => [
+
+            'actions' => [
+                'collapse_list' => 'Tunjukkan kurang :count',
+                'expand_list' => 'Tunjukkan :count lagi',
+            ],
+
             'more_list_items' => 'dan :count lagi',
         ],
 
@@ -24,6 +30,10 @@ return [
 
         'bulk_select_record' => [
             'label' => 'Pilih/nyahpilih item :key untuk tindakan pukal.',
+        ],
+
+        'bulk_select_group' => [
+            'label' => 'Pilih/nyahpilih kumpulan :title untuk tindakan pukal.',
         ],
 
         'search' => [
@@ -101,6 +111,10 @@ return [
     'filters' => [
 
         'actions' => [
+
+            'apply' => [
+                'label' => 'Gunakan penapis',
+            ],
 
             'remove' => [
                 'label' => 'Buang penapis',

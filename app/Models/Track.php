@@ -10,6 +10,11 @@ class Track extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
     protected $fillable = ['title'];
 
     public function reservations(): HasMany

@@ -34,6 +34,7 @@ class ReservationResource extends Resource
         return $form
             ->schema([
                 DatePicker::make('date')
+                    ->label(__('Date'))
                     ->native(false)
                     ->minDate(now()->format($dateFormat))
                     ->maxDate(now()->addWeeks(2)->format($dateFormat))
@@ -41,6 +42,7 @@ class ReservationResource extends Resource
                     ->required()
                     ->live(),
                 Radio::make('track')
+                    ->label(__('Track'))
                     ->options(fn (Get $get) => (new ReservationService())->getAvailableTimesForDate($get('date')))
                     ->hidden(fn (Get $get) => ! $get('date'))
                     ->required()
@@ -48,14 +50,46 @@ class ReservationResource extends Resource
             ]);
     }
 
+    public static function getModelLabel(): string
+    {
+        return __('reservation');
+    }
+
+    public static function getNavigationLabel(): string
+    {
+        return __('Reservations');
+    }
+
+    public static function getPages(): array
+    {
+        return [
+            'index'  => ListReservations::route('/'),
+            'create' => CreateReservation::route('/create'),
+            // 'edit'   => EditReservation::route('/{record}/edit'),
+        ];
+    }
+
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
+    }
+
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('user.name'),
-                TextColumn::make('track.title'),
-                TextColumn::make('start_time')->dateTime('Y-m-d H:i'),
-                TextColumn::make('end_time')->dateTime('Y-m-d H:i'),
+                TextColumn::make('user.name')
+                    ->label(__('User')),
+                TextColumn::make('track.title')
+                    ->label(__('Track')),
+                TextColumn::make('start_time')
+                    ->label(__('Start time'))
+                    ->dateTime('Y-m-d H:i'),
+                TextColumn::make('end_time')
+                    ->label(__('End time'))
+                    ->dateTime('Y-m-d H:i'),
             ])
             ->filters([
                 //
@@ -72,21 +106,5 @@ class ReservationResource extends Resource
                 Tables\Actions\CreateAction::make(),
             ])
             ->defaultSort('start_time', 'desc');
-    }
-
-    public static function getRelations(): array
-    {
-        return [
-            //
-        ];
-    }
-
-    public static function getPages(): array
-    {
-        return [
-            'index'  => ListReservations::route('/'),
-            'create' => CreateReservation::route('/create'),
-            // 'edit'   => EditReservation::route('/{record}/edit'),
-        ];
     }
 }

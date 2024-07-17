@@ -3,9 +3,9 @@
 namespace App\Filament\Resources\ReservationResource\Pages;
 
 use App\Filament\Resources\ReservationResource;
-use Carbon\Carbon;
 use Filament\Actions;
 use Filament\Resources\Pages\CreateRecord;
+use Illuminate\Support\Carbon;
 
 class CreateReservation extends CreateRecord
 {
@@ -15,7 +15,7 @@ class CreateReservation extends CreateRecord
     {
         $date             = Carbon::parse($data['date']);
         [$trackId, $hour] = explode('-', $data['track']);
-        $startTime        = $date->copy()->hour($hour);
+        $startTime        = $date->copy()->hour((int)$hour);
         $endTime          = $startTime->copy()->addHour();
 
         $dateTimeFormat = 'Y-m-d H:i:s';

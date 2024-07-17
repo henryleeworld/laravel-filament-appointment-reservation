@@ -1,4 +1,4 @@
-# Laravel 10 Filament 預約登記
+# Laravel 11 Filament 預約登記
 
 Filament 預約登記採用快速建立簡捷的 TALL（Tailwind CSS、Alpine.js、Laravel 和 Livewire）堆疊應用程式的工具組，可協助管理時間空檔，在預約日期前後與顧客保持直接聯繫，協助防止爽約並鼓勵再次預約。
 
@@ -31,9 +31,13 @@ $ npm run build
 ```
 - 在瀏覽器中輸入已定義的路由 URL 來訪問，例如：http://127.0.0.1:8000。
 - 你可以經由 `/` 來進行預約登記。
+- 或可以經由 `/admin/login` 來進行登入，預設的電子郵件和密碼分別為 __admin@admin.com__ 和 __password__ 。
 
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/tFY29ti.gif)
-> 可以隨時隨地進行預約
+![](https://i.imgur.com/63fXTLx.gif)
+> 可輕鬆選擇適合的時段，提高了預約的便利性，同時也提供了更好的用戶體驗
+
+![](https://i.imgur.com/GjcyyAR.png)
+> 確保預約流程順暢，減少排程和安排上的混亂

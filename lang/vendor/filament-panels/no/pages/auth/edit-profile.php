@@ -7,7 +7,7 @@ return [
     'form' => [
 
         'email' => [
-            'label' => 'E-post adresse',
+            'label' => 'E-postadresse',
         ],
 
         'name' => [
@@ -42,7 +42,7 @@ return [
 
     'actions' => [
 
-        'back' => [
+        'cancel' => [
             'label' => 'tilbake',
         ],
 

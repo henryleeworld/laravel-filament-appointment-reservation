@@ -1,10 +1,19 @@
 {
     "[Track :title]": "【區間 :title】",
+    "Administrator": "系統管理員",
     "Create": "建立",
     "Create Reservation": "建立預約",
     "Date": "日期",
     "Email": "電子郵件",
+    "End time": "結束時間",
     "Name": "姓名",
+    "reservation": "預約",
     "Reservation has been created": "預約已建立",
-    "Track": "區間"
+    "Reservations": "預約",
+    "Start time": "開始時間",
+    "Title": "標題",
+    "track": "區間",
+    "Track": "區間",
+    "Tracks": "區間",
+    "User": "使用者"
 }

@@ -11,7 +11,14 @@ return [
     'columns' => [
 
         'text' => [
-            'more_list_items' => 'és további :count',
+
+            'actions' => [
+                'collapse_list' => ':count elemmel kevesebb mutatása',
+                'expand_list' => ':count elemmel több mutatása',
+            ],
+
+            'more_list_items' => 'és :count több',
+
         ],
 
     ],
@@ -19,17 +26,21 @@ return [
     'fields' => [
 
         'bulk_select_page' => [
-            'label' => 'Az összes elem kiválasztása/kiválasztásának megszüntetése tömeges műveletekhez.',
+            'label' => 'Az összes elem kijelölése vagy a kijelölés megszüntetése csoportos műveletekhez.',
         ],
 
         'bulk_select_record' => [
-            'label' => ':key elem kiválasztása/kiválasztásának megszüntetése tömeges műveletekhez.',
+            'label' => ':key elem kijelölése vagy a kijelölés megszüntetése csoportos műveletekhez.',
+        ],
+
+        'bulk_select_group' => [
+            'label' => ':title csoport kijelölése vagy a kijelölés megszüntetése csoportos műveletekhez.',
         ],
 
         'search' => [
             'label' => 'Keresés',
             'placeholder' => 'Keresés',
-            'indicator' => 'Keres',
+            'indicator' => 'Keresés',
         ],
 
     ],
@@ -55,7 +66,7 @@ return [
             ],
 
             'sum' => [
-                'label' => 'Szumma',
+                'label' => 'Összeg',
             ],
 
         ],
@@ -65,11 +76,11 @@ return [
     'actions' => [
 
         'disable_reordering' => [
-            'label' => 'Sorba rendezés befejezése',
+            'label' => 'Átrendezés befejezése',
         ],
 
         'enable_reordering' => [
-            'label' => 'Sorba rendezés',
+            'label' => 'Átrendezés',
         ],
 
         'filter' => [
@@ -77,24 +88,24 @@ return [
         ],
 
         'group' => [
-            'label' => 'Csoport',
+            'label' => 'Csoportosítás',
         ],
 
         'open_bulk_actions' => [
-            'label' => 'Műveletek magjelenítése',
+            'label' => 'Csoportos műveletek',
         ],
 
         'toggle_columns' => [
-            'label' => 'Oszlopok mutatása/elrejtése',
+            'label' => 'Oszlopok láthatósága',
         ],
 
     ],
 
     'empty' => [
 
-        'heading' => 'Nincs találat',
+        'heading' => 'Nincs megjeleníthető elem',
 
-        'description' => 'Hozzon létre egy :model a kezdéshez.',
+        'description' => 'Hozz létre egy újat a kezdéshez.',
 
     ],
 
@@ -102,17 +113,21 @@ return [
 
         'actions' => [
 
+            'apply' => [
+                'label' => 'Szűrők alkalmazása',
+            ],
+
             'remove' => [
-                'label' => 'Szűrés megszűntetése',
+                'label' => 'Szűrő megszüntetése',
             ],
 
             'remove_all' => [
-                'label' => 'Összes szűrés megszűntetése',
-                'tooltip' => 'Összes szűrés megszűntetése',
+                'label' => 'Az összes szűrő megszüntetése',
+                'tooltip' => 'Az összes szűrő megszüntetése',
             ],
 
             'reset' => [
-                'label' => 'Alapértelmezés',
+                'label' => 'Visszaállítás',
             ],
 
         ],
@@ -135,9 +150,9 @@ return [
 
             'only_trashed' => 'Csak a törölt elemek',
 
-            'with_trashed' => 'A törölt elemekkel',
+            'with_trashed' => 'Törölt elemekkel együtt',
 
-            'without_trashed' => 'A törölt elemek nélkül',
+            'without_trashed' => 'Törölt elemek nélkül',
 
         ],
 
@@ -167,7 +182,7 @@ return [
 
     ],
 
-    'reorder_indicator' => 'Fogd meg és mozgasd a sorrendezéshez.',
+    'reorder_indicator' => 'Kattints az elemekre és mozgasd őket az átrendezéshez.',
 
     'selection_indicator' => [
 
@@ -176,7 +191,7 @@ return [
         'actions' => [
 
             'select_all' => [
-                'label' => 'Kijelöli mind a(z) :count elemet',
+                'label' => 'Mind a(z) :count elem kijelölése',
             ],
 
             'deselect_all' => [
@@ -192,7 +207,7 @@ return [
         'fields' => [
 
             'column' => [
-                'label' => 'Rendezve',
+                'label' => 'Rendezés',
             ],
 
             'direction' => [

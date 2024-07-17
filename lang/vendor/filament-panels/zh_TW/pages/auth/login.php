@@ -9,7 +9,7 @@ return [
     'form' => [
 
         'email' => [
-            'label' => 'E-Mail 位址',
+            'label' => '電子郵件',
         ],
 
         'password' => [

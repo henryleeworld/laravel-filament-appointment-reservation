@@ -45,11 +45,19 @@ return [
             ],
 
             'system' => [
-                'label' => 'Bật chế độ theo hệ thống',
+                'label' => 'Bật chế độ hệ thống',
             ],
 
         ],
 
+    ],
+
+    'avatar' => [
+        'alt' => 'Ảnh đại diện của :name',
+    ],
+
+    'logo' => [
+        'alt' => 'Logo :name',
     ],
 
 ];

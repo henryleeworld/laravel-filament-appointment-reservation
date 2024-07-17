@@ -10,6 +10,11 @@ class Reservation extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
     protected $fillable = ['user_id', 'track_id', 'start_time', 'end_time'];
 
     public function track(): BelongsTo

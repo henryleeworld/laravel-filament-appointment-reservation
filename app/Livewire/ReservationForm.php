@@ -5,7 +5,6 @@ namespace App\Livewire;
 use App\Models\Reservation;
 use App\Models\User;
 use App\Services\ReservationService;
-use Carbon\Carbon;
 use Filament\Forms;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Radio;
@@ -16,6 +15,7 @@ use Filament\Forms\Form;
 use Filament\Forms\Get;
 use Filament\Notifications\Notification;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Carbon;
 use Livewire\Component;
 
 class ReservationForm extends Component implements HasForms
@@ -74,7 +74,7 @@ class ReservationForm extends Component implements HasForms
 
         $date             = Carbon::parse($data['date']);
         [$trackId, $hour] = explode('-', $data['track']);
-        $startTime        = $date->copy()->hour($hour);
+        $startTime        = $date->copy()->hour((int)$hour);
         $endTime          = $startTime->copy()->addHour();
         $dateTimeFormat   = 'Y-m-d H:i:s';
 
