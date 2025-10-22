@@ -1,4 +1,4 @@
-# Laravel 11 Filament 預約登記
+# Laravel 12 Filament 預約登記
 
 Filament 預約登記採用快速建立簡捷的 TALL（Tailwind CSS、Alpine.js、Laravel 和 Livewire）堆疊應用程式的工具組，可協助管理時間空檔，在預約日期前後與顧客保持直接聯繫，協助防止爽約並鼓勵再次預約。
 
@@ -36,8 +36,8 @@ $ npm run build
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/63fXTLx.gif)
+![](https://i.imgur.com/oBbmARk.gif)
 > 可輕鬆選擇適合的時段，提高了預約的便利性，同時也提供了更好的用戶體驗
 
-![](https://i.imgur.com/GjcyyAR.png)
+![](https://i.imgur.com/BfHRRVd.png)
 > 確保預約流程順暢，減少排程和安排上的混亂

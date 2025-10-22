@@ -15,9 +15,8 @@ return new class extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();
-            $table->foreignIdFor(Track::class)->constrained()->cascadeOnDelete();
-
+            $table->foreignIdFor(User::class)->constrained()->onDelete('cascade');
+            $table->foreignIdFor(Track::class)->constrained()->onDelete('cascade');
             $table->datetime('start_time');
             $table->datetime('end_time');
             $table->timestamps();

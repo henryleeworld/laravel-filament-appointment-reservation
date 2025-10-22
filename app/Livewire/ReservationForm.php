@@ -5,22 +5,21 @@ namespace App\Livewire;
 use App\Models\Reservation;
 use App\Models\User;
 use App\Services\ReservationService;
-use Filament\Forms;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Radio;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Concerns\InteractsWithForms;
-use Filament\Forms\Contracts\HasForms;
-use Filament\Forms\Form;
-use Filament\Forms\Get;
 use Filament\Notifications\Notification;
+use Filament\Schemas\Components\Utilities\Get;
+use Filament\Schemas\Concerns\InteractsWithSchemas;
+use Filament\Schemas\Contracts\HasSchemas;
+use Filament\Schemas\Schema;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Carbon;
 use Livewire\Component;
 
-class ReservationForm extends Component implements HasForms
+class ReservationForm extends Component implements HasSchemas
 {
-    use InteractsWithForms;
+    use InteractsWithSchemas;
 
     public ?array $data = [];
 
@@ -36,12 +35,12 @@ class ReservationForm extends Component implements HasForms
         $this->form->fill();
     }
 
-    public function form(Form $form): Form
+    public function form(Schema $form): Schema
     {
         $dateFormat = 'Y-m-d';
 
         return $form
-            ->schema([
+            ->components([
                 TextInput::make('name')
                     ->label(__('Name'))
                     ->required(),

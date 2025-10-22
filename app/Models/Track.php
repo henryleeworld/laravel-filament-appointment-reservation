@@ -8,15 +8,19 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Track extends Model
 {
+    /** @use HasFactory<\Database\Factories\TrackFactory> */
     use HasFactory;
 
     /**
      * The attributes that are mass assignable.
      *
-     * @var array<int, string>
+     * @var list<string>
      */
     protected $fillable = ['title'];
 
+    /**
+     * Get the reservations for the track.
+     */
     public function reservations(): HasMany
     {
         return $this->hasMany(Reservation::class);
